@@ -389,12 +389,35 @@ function PrintRandomUserData(randomUserdata){
 
      /* User History Data Start */
 
+
+const dateInput = document.getElementById('input-date');  
+const timeInput = document.getElementById('input-time'); 
+const rentpointInput = document.getElementById('input-rentpoint'); 
+const caloriesburnedInput = document.getElementById('input-caloriesburned'); 
+const usedhoursInput = document.getElementById('input-usedhours'); 
+const feeInput = document.getElementById('input-fee'); 
+
+const printEnteredData = document.getElementById('printdata2'); 
+
+const addBtn = document.getElementById("addbtn");
+
+
+
+
 const printUserData = document.getElementById('printdata');
 
 const getDataBtn = document.getElementById("btnlist");
 
 
 getDataBtn.addEventListener('click', getUserData);
+
+addBtn.addEventListener('click', addUserData);
+
+// add data
+function addUserData() {
+    printEnteredData.innerHTML = dateInput.value + " "+ timeInput.value + " "+ rentpointInput.value +"Hire Point"+" "+ caloriesburnedInput.value + "Kcal"+" "+ usedhoursInput.value + " "+ feeInput.value;
+
+}
 
 
 
@@ -416,7 +439,7 @@ function getUserData(){
         let text = localStorage.getItem("recordJSON");
         let obj = JSON.parse(text);
         const newItem = document.createElement('ion-item');
-        newItem.textContent = obj.date + " " +obj.time + " " +obj.rentpoint+ " " +obj.caloriesburned+ " " +obj.hours+ " " +obj.fee;
+        newItem.textContent = obj.date + " " +obj.time + " " +obj.rentpoint+ " " +obj.caloriesburned+ " " +obj.usedhours+ " " +obj.fee;
       
 
         printUserData.appendChild(newItem);

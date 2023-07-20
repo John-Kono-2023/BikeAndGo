@@ -229,8 +229,34 @@ width: 340px;
               </ion-toolbar>
               </ion-header>
               <ion-card>
-            <ion-button id="btnlist" size="small">Data List</ion-button>
+                <ion-list>
+
+                  <ion-item>
+                    <ion-input  id="input-date" type="text" label="Date" placeholder="Date"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input id="input-time" type="text" label="Time" placeholder="Time"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input id="input-rentpoint" type="text" label="Rent Point" placeholder="Rent Point"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input id="input-caloriesburned" type="text" label="Calories Burned" placeholder="Calories Burned"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input id="input-usedhours" type="text" label="Used Hours" placeholder="Used Hours"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input id="input-fee" type="text" label="Fee" placeholder="Fee"></ion-input>
+                  </ion-item>
+                  
+                  
+                </ion-list>
+                <p classs="output" id="printdata2"> </p>
+           
           </ion-card>
+          <ion-button id="addbtn" size="small">Add New Data</ion-button>
+          <ion-button id="btnlist" size="small">Data List</ion-button>
             <ion-content>
 
                <ion-card>
