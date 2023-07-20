@@ -394,12 +394,12 @@ const dateInput = document.getElementById('input-date');
 const timeInput = document.getElementById('input-time'); 
 const rentpointInput = document.getElementById('input-rentpoint'); 
 const caloriesburnedInput = document.getElementById('input-caloriesburned'); 
-const usedhoursInput = document.getElementById('input-usedhours'); 
+const usedminutesInput = document.getElementById('input-usedminutes'); 
 const feeInput = document.getElementById('input-fee'); 
 
 const printEnteredData = document.getElementById('printdata2'); 
 
-const addBtn = document.getElementById("addbtn");
+const saveDataBtn = document.getElementById("savedtbtn");
 
 
 
@@ -411,16 +411,16 @@ const getDataBtn = document.getElementById("btnlist");
 
 getDataBtn.addEventListener('click', getUserData);
 
-addBtn.addEventListener('click', addUserData);
+saveDataBtn.addEventListener('click', saveUserNewData);
 
 // add data
-function addUserData() {
-    printEnteredData.innerHTML = dateInput.value + " "+ timeInput.value + " "+ rentpointInput.value +"Hire Point"+" "+ caloriesburnedInput.value + "Kcal"+" "+ usedhoursInput.value + " "+ "£"+feeInput.value;
+function saveUserNewData() {
+    printEnteredData.innerHTML = dateInput.value + " "+ timeInput.value + " "+ rentpointInput.value +" Hire Point"+" "+ caloriesburnedInput.value + " Kcal"+" "+ usedminutesInput.value +" min"+ " "+ "£"+feeInput.value;
     document.getElementById('input-date').value = '';
     document.getElementById('input-time').value = '';
     document.getElementById('input-rentpoint').value = '';
     document.getElementById('input-caloriesburned').value = '';
-    document.getElementById('input-usedhours').value = '';
+    document.getElementById('input-usedminutes').value = '';
     document.getElementById('input-fee').value = '';
 }
 
@@ -442,9 +442,9 @@ function getUserData(){
 
         // get data:
         let text = localStorage.getItem("recordJSON");
-        let obj = JSON.parse(text);
+        let file = JSON.parse(text);
         const newItem = document.createElement('ion-item');
-        newItem.textContent = obj.date + " " +obj.time + " " +obj.rentpoint+ " " +obj.caloriesburned+ " " +obj.usedhours+ " " +obj.fee;
+        newItem.textContent = file.date + " " +file.time + " " +file.rentpoint+ " " +file.caloriesburned+ " " + file.usedminutes+ " " +file.fee;
       
 
         printUserData.appendChild(newItem);
