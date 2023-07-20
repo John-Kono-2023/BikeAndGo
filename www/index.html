@@ -1,0 +1,357 @@
+<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="author" content="John Kono">
+<meta name="description" content="Bike And Go App">
+<title>BikeAndGo</title>
+
+
+
+<!--  allows us to use of the Ionic Framework core components and CSS bundle-->
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
+
+
+<!-- Link to an external style css for leaflet map-->
+<link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css"/>
+
+
+
+<!-- line Use a Hosted Version of latest and  stable Leaflet -->
+ <script src="../node_modules/leaflet/dist/leaflet.js"></script>
+     
+
+
+ 
+ <!-- map custom css style-->  
+ <!-- weather custom css style-->     
+ <!-- ionic pages and logo custom css style-->
+<style>
+
+.logo
+{
+  margin-top: 15px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  height:200px;
+  width:200px;
+}
+
+.backgroundimg {
+  --background: #ccc url("../www/images/pic-3.jpg") no-repeat top center / cover;
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+
+.picture
+{
+  border-radius: 50%;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid #0aa4d3;
+  height:250px;
+  width:250px;
+ 
+}
+
+
+ion-card{
+  background: rgba(255, 254, 254, 0.8);
+}
+
+
+ion-title{
+  font-family: "Arial";
+  font-weight: bold;
+  text-align: center;
+}
+
+ion-avatar {
+    margin: 20px auto;
+    height:120px;
+    width: 120px;
+    border: 5px solid #0aa4d3;
+    font-family: "Lucida Sans", sans-serif; 
+  }
+
+.map-content {
+z-index:99999;
+width: 100vw;
+height: 100%;
+}
+
+
+
+.page-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+
+.pageweather{
+  
+  width: auto;
+  height: 100%;
+
+  background: rgba(8, 83, 196, 0.8);
+  color:#fff;
+  text-align:center;
+  font-family: "Lucida Sans", sans-serif; 
+}
+  
+.pagehome{
+  
+  width: auto;
+  height: 100%;
+
+  background: rgba(8, 83, 196, 0.8);
+  color:#fff;
+  text-align:center;
+  font-family: "Lucida Sans", sans-serif; 
+  }
+
+
+.line {
+    height: 5px;
+    background: #FFEE90;
+}
+
+
+
+h2{
+
+font-size:40px;
+font-weight:450;
+
+}
+
+
+h3{
+
+font-size:28px;
+font-weight:450;
+
+}
+
+
+p{
+
+font-size:18px;
+font-weight:450;
+
+}
+
+#weathericon{
+
+margin-left: auto;
+margin-right: auto;
+width: 340px;
+
+
+}
+
+
+
+</style>
+
+
+
+     
+
+
+
+</head>
+
+
+
+
+<body>
+
+  
+    <ion-title>
+        BikeAndGo
+    </ion-title>
+
+
+    <!-- ionic tab page for home -->
+    <ion-tabs>
+        <ion-tab tab="home">
+          <ion-nav id="home-nav"></ion-nav>
+          <div id="home-page">
+            <ion-header>
+              <ion-toolbar>
+                <ion-title>Welcome to Bike and Go</ion-title>
+              </ion-toolbar>
+            </ion-header>
+          
+            <ion-content class="backgroundimg">
+              
+              <div class="pagehome">
+              <div> <img   class="logo" src="../www/images/logo.png"  alt="Bike And Go Logo"> </div> 
+
+            <ion-card>
+            <div> <img class="picture" src="" id="user-picture" alt=""> </div> 
+           
+            <div id="user-result"> </div>
+            </ion-card>
+
+            </div>
+            </ion-content>
+          
+          </div>
+        </ion-tab>
+
+
+
+         <!-- ionic tab page for History -->
+        <ion-tab tab="History">
+          <ion-nav id="History-nav"></ion-nav>
+          <div id="History-page">
+            <ion-header>
+              <ion-toolbar>
+                <ion-title>History</ion-title>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content>
+             
+              <ion-card>
+                <ion-card-content>
+                   
+                    <ion-button id="btndata">Data List</ion-button>
+                </ion-card-content>
+            </ion-card>
+            <ion-card>
+                <ion-card-header>User Database</ion-card-header>
+                <ion-card-content>
+                    <ion-list id = "printdata"></ion-list>
+                    </ion-list>
+                </ion-card-content>
+            </ion-card>
+
+            </ion-content>
+          </div>
+        </ion-tab>
+
+
+         <!-- ionic tab page for Map Lefleat-->
+        <ion-tab tab="Map">
+          <ion-nav id="Map-nav"></ion-nav>
+          <div id="Map-page">
+            <ion-header>
+              <ion-toolbar>
+               
+                <ion-title>Bike And Go Map </ion-title>
+                
+                <ion-buttons slot="secondary">
+                  
+                <ion-button color="primary" id="btn-findme" size="small" fill="solid">
+
+                  
+                  <ion-icon slot="end" name="person-circle"></ion-icon>
+                  FindMe
+                </ion-button>
+
+              </ion-buttons>
+
+               </ion-toolbar>
+              
+            </ion-header>
+
+            <!-- content fills the space between a header and footer.-->
+            <ion-content [fullscreen]="true">
+              
+
+              <div class="map-content" id="map" ></div>
+              
+              
+             
+
+            </ion-content>
+          </div>
+        </ion-tab>
+
+
+         <!-- ionic tab page for Search-->
+        <ion-tab tab="weather">
+          <ion-nav id="weather-nav"></ion-nav>
+          <div id="weather-page">
+            <ion-header>
+              <ion-toolbar>
+                <ion-title>Bike And Go Weather</ion-title>
+              </ion-toolbar>
+            </ion-header>
+
+            <ion-content  class="backgroundimg">
+             
+              <div class="pageweather">
+                
+                <div> <img src="" id="weathericon" alt=""> </div>
+
+                <ion-card>
+                <div id="weather-results"></div>
+
+
+              
+              </ion-card>
+            </div>
+            </ion-content>
+          </div>
+        </ion-tab>
+
+
+
+        <!-- icon button Home-->
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="home">
+            <ion-icon name="home"></ion-icon>
+            Home
+          </ion-tab-button>
+
+           <!-- icon button History-->
+          <ion-tab-button tab="History">
+            <ion-icon name="file-tray-full-outline"></ion-icon>
+            History
+          </ion-tab-button>
+
+          <!-- icon button Map-->
+          <ion-tab-button tab="Map">
+            <ion-icon name="Map"></ion-icon>
+            Map
+          </ion-tab-button>
+
+          <!-- icon button Weather-->
+          <ion-tab-button tab="weather">
+            <ion-icon name="cloudy-outline"></ion-icon>
+            Weather
+          </ion-tab-button>
+
+
+        </ion-tab-bar>
+
+
+      </ion-tabs>
+
+
+
+      
+
+      
+      <script src="app.js" async defer></script>
+      <script src="data.js"></script>
+</body>
+</html>

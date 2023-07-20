@@ -1,0 +1,19 @@
+{
+  "name": "bikeandgo",
+  "version": "1.0.0",
+  "description": "Sustainable Development App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Kono",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/android": "^5.0.5",
+    "@capacitor/core": "^5.0.5",
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^5.0.5"
+  }
+}
