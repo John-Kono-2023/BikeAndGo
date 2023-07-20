@@ -387,7 +387,7 @@ function PrintRandomUserData(randomUserdata){
      
 
 
-     /* History Data Start */
+     /* User History Data Start */
 
 const printUserData = document.getElementById('printdata');
 
@@ -426,7 +426,7 @@ function getUserData(){
 
 }
 
-/* History End */
+/* User History Data End */
 
 
 
