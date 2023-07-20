@@ -415,8 +415,13 @@ addBtn.addEventListener('click', addUserData);
 
 // add data
 function addUserData() {
-    printEnteredData.innerHTML = dateInput.value + " "+ timeInput.value + " "+ rentpointInput.value +"Hire Point"+" "+ caloriesburnedInput.value + "Kcal"+" "+ usedhoursInput.value + " "+ feeInput.value;
-
+    printEnteredData.innerHTML = dateInput.value + " "+ timeInput.value + " "+ rentpointInput.value +"Hire Point"+" "+ caloriesburnedInput.value + "Kcal"+" "+ usedhoursInput.value + " "+ "£"+feeInput.value;
+    document.getElementById('input-date').value = '';
+    document.getElementById('input-time').value = '';
+    document.getElementById('input-rentpoint').value = '';
+    document.getElementById('input-caloriesburned').value = '';
+    document.getElementById('input-usedhours').value = '';
+    document.getElementById('input-fee').value = '';
 }
 
 
