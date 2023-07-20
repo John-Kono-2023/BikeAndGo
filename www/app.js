@@ -389,7 +389,7 @@ function PrintRandomUserData(randomUserdata){
 
      /* User History Data Start */
 
-
+// gets user entered input data
 const dateInput = document.getElementById('input-date');  
 const timeInput = document.getElementById('input-time'); 
 const rentpointInput = document.getElementById('input-rentpoint'); 
@@ -397,21 +397,12 @@ const caloriesburnedInput = document.getElementById('input-caloriesburned');
 const usedminutesInput = document.getElementById('input-usedminutes'); 
 const feeInput = document.getElementById('input-fee'); 
 
+
+
 const printEnteredData = document.getElementById('printdata2'); 
 
 const saveDataBtn = document.getElementById("savedtbtn");
 
-
-
-
-const printUserData = document.getElementById('printdata');
-
-const getDataBtn = document.getElementById("btnlist");
-
-
-getDataBtn.addEventListener('click', getUserData);
-
-saveDataBtn.addEventListener('click', saveUserNewData);
 
 // add data
 function saveUserNewData() {
@@ -428,19 +419,33 @@ function saveUserNewData() {
 
 
 
+
+
+
+const printUserData = document.getElementById('printdata');
+
+const getDataBtn = document.getElementById("btnlist");
+
+
+getDataBtn.addEventListener('click', getUserData);
+
+saveDataBtn.addEventListener('click', saveUserNewData);
+
+
+
+// 
 function getUserData(){
-           // set data:
-        
-          
-
-
+            
+//  for loop for read array data
    for(let i=0; i<userData.length; i++){
         const output = JSON.stringify(userData[i]);
+        // console printout 
         console.log(output);
+        // local storage
         localStorage.setItem("recordJSON", output);
 
 
-        // get data:
+        // 
         let text = localStorage.getItem("recordJSON");
         let file = JSON.parse(text);
         const newItem = document.createElement('ion-item');
