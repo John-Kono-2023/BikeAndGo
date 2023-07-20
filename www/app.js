@@ -391,7 +391,7 @@ function PrintRandomUserData(randomUserdata){
 
 const printUserData = document.getElementById('printdata');
 
-const getDataBtn = document.getElementById("btndata");
+const getDataBtn = document.getElementById("btnlist");
 
 
 getDataBtn.addEventListener('click', getUserData);
