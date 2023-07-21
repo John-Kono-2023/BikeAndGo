@@ -86,7 +86,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 for (var a = 0; a < rentPointData.length; a++) {
 
-    var printOnMap = rentPointData[i];
+    var printOnMap = rentPointData[a];
 
     printOnMap.addTo(map);
 }
