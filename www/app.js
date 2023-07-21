@@ -32,7 +32,7 @@
         const weatherPage = document.querySelector('#weather-page');
         weatherNav.root = weatherPage;
 
-        
+
      
 /* ionic pages End */
 
@@ -89,6 +89,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // var council_1 = L.marker([57.1648, -2.1015]).bindPopup('Aberdeen University Bike Hire Point').addTo(map);
 
 
+// for loop for call all data from data.js and print on map
 for (var a = 0; a < rentPointData.length; a++) {
 
     var printOnMap = rentPointData[a];

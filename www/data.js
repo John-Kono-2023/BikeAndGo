@@ -1,3 +1,4 @@
+// User data array
 const userData = [
 
 { date: "12/02/2023", time:"14:35", rentpoint: "Aberdeen University Hire Point",caloriesburned:"137 Kcal" ,usedminutes:"60 min",fee:"£35" },
@@ -14,6 +15,8 @@ const userData = [
 { date: "15/05/2023", time:"13:06", rentpoint: "Aberdeen University Hire Point",caloriesburned:"137 Kcal" ,usedminutes:"60 min",fee:"£35" }
 ];
 
+
+// Map Data array
 var rentPointData = [
     /* Aberdeen City Center */
     L.marker([57.149651, -2.09907]).bindPopup('Aberdeen City Center'),
