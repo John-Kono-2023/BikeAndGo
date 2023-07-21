@@ -367,7 +367,7 @@ function PrintRandomUserData(randomUserdata){
 
 
      
-   // for testing show all weather data in console
+   // print old data in console
    console.log(randomUserdata);
  
  }
@@ -418,15 +418,20 @@ const printEnteredData = document.getElementById('printdata2');
 const saveDataBtn = document.getElementById("savedtbtn");
 
 
+
 // add data
 function saveUserNewData() {
     printEnteredData.innerHTML = dateInput.value + " "+ timeInput.value + " "+ rentpointInput.value +" Hire Point"+" "+ caloriesburnedInput.value + " Kcal"+" "+ usedminutesInput.value +" min"+ " "+ "£"+feeInput.value;
+    
+    
+    // clear all input text boxs
     document.getElementById('input-date').value = '';
     document.getElementById('input-time').value = '';
     document.getElementById('input-rentpoint').value = '';
     document.getElementById('input-caloriesburned').value = '';
     document.getElementById('input-usedminutes').value = '';
     document.getElementById('input-fee').value = '';
+
 }
 
 
@@ -445,6 +450,7 @@ getDataBtn.addEventListener('click', getUserData);
 
 saveDataBtn.addEventListener('click', saveUserNewData);
 
+ 
 
 
 // 
@@ -467,6 +473,8 @@ function getUserData(){
       
 
         printUserData.appendChild(newItem);
+
+       
 
    }
 
