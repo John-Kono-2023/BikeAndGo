@@ -72,16 +72,24 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
  function mapPoints(){
 
 /* Aberdeen City Center */
-var aberdeen = L.marker([57.149651, -2.09907]).bindPopup('Aberdeen City Center').addTo(map);
+// var aberdeen = L.marker([57.149651, -2.09907]).bindPopup('Aberdeen City Center').addTo(map);
 
 /* Robert Gordon University Bike Hire Point */
-var rgu = L.marker([57.1189, -2.1379]).bindPopup('Robert Gordon University Bike Hire Point').addTo(map);
+// var rgu = L.marker([57.1189, -2.1379]).bindPopup('Robert Gordon University Bike Hire Point').addTo(map);
 
 /* Aberdeen city council bike hire point position */
-var council_1 = L.marker([57.13143, -2.117009]).bindPopup('Aberdeen City Council Bike Hire Point').addTo(map);
+// var council_1 = L.marker([57.13143, -2.117009]).bindPopup('Aberdeen City Council Bike Hire Point').addTo(map);
 
 /* Aberdeen University bike hire point position */
-var council_1 = L.marker([57.1648, -2.1015]).bindPopup('Aberdeen University Bike Hire Point').addTo(map);
+// var council_1 = L.marker([57.1648, -2.1015]).bindPopup('Aberdeen University Bike Hire Point').addTo(map);
+
+
+for (var a = 0; a < rentPointData.length; a++) {
+
+    var printOnMap = rentPointData[i];
+
+    printOnMap.addTo(map);
+}
 
 }
 

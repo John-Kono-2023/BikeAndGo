@@ -13,3 +13,17 @@ const userData = [
 { date: "08/05/2023", time:"11:12", rentpoint: "Robert Gordon University Hire Point",caloriesburned:"194 Kcal" ,usedminutes:"75 min",fee:"£39" },
 { date: "15/05/2023", time:"13:06", rentpoint: "Aberdeen University Hire Point",caloriesburned:"137 Kcal" ,usedminutes:"60 min",fee:"£35" }
 ];
+
+var rentPointData = [
+    /* Aberdeen City Center */
+    L.marker([57.149651, -2.09907]).bindPopup('Aberdeen City Center'),
+
+    /* Robert Gordon University Bike Hire Point */
+    L.marker([57.1189, -2.1379]).bindPopup('Robert Gordon University Bike Hire Point'),
+
+     /* Aberdeen city council bike hire point position */
+    L.marker([57.13143, -2.117009]).bindPopup('Aberdeen City Council Bike Hire Point'),
+
+    /* Aberdeen University bike hire point position */
+    L.marker([57.1648, -2.1015]).bindPopup('Aberdeen University Bike Hire Point')
+];
