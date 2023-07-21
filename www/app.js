@@ -12,22 +12,27 @@
 /* ionic pages */
 
 
-
+// Home page
         const homeNav = document.querySelector('#home-nav');
         const homePage = document.querySelector('#home-page');
         homeNav.root = homePage;
-      
+        
+ // History page     
         const HistoryNav = document.querySelector('#History-nav');
         const HistoryPage = document.querySelector('#History-page');
         HistoryNav.root = HistoryPage;
-      
+
+ // Map page      
         const MapNav = document.querySelector('#Map-nav');
         const MapPage = document.querySelector('#Map-page');
         MapNav.root = MapPage;
-      
+
+  // Weather page     
         const weatherNav = document.querySelector('#weather-nav');
         const weatherPage = document.querySelector('#weather-page');
         weatherNav.root = weatherPage;
+
+        
      
 /* ionic pages End */
 
