@@ -246,12 +246,12 @@ function PrintData(weatherdata){
      console.log(weatherdata);
          
     }
-    
-       
-    
-    
+
+
+   
+
     // get data function is fetch JSON, When the fetch is successful, we read data
-    function getData(query){
+    function getData(){
 
     //var url="https://api.openweathermap.org/data/2.5/weather?q=London&appid=3aad438e0e6d2414efcb5e578525c3ad&units=metric";
     
@@ -260,14 +260,10 @@ function PrintData(weatherdata){
     // api url
     const apiUrl="https://api.openweathermap.org/data/2.5/weather?q=";
 
-
     // selected city
-   
-      const apiCity="Aberdeen";
-
-
+    const apiCity='Aberdeen'
     // fetch 
-    fetch (apiUrl+apiCity+",GB"+'&appid='+ apiKey + '&units=metric')
+    fetch (apiUrl + apiCity + ',GB' + '&appid=' + apiKey + '&units=metric')
     .then((res) => res.json())
     .then((results) => PrintData(results));
     
