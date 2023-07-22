@@ -259,10 +259,15 @@ function PrintData(weatherdata){
     const apiKey="3aad438e0e6d2414efcb5e578525c3ad";
     // api url
     const apiUrl="https://api.openweathermap.org/data/2.5/weather?q=";
+
+
     // selected city
-    const apiCity="Aberdeen,GB"
+   
+      const apiCity="Aberdeen";
+
+
     // fetch 
-    fetch (apiUrl+apiCity+'&appid='+ apiKey + '&units=metric')
+    fetch (apiUrl+apiCity+",GB"+'&appid='+ apiKey + '&units=metric')
     .then((res) => res.json())
     .then((results) => PrintData(results));
     
