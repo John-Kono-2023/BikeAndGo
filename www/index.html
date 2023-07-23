@@ -232,7 +232,7 @@ width: 340px;
               </ion-header>
               <ion-card>
                 <ion-list>
-
+                  
                   <ion-item>
                     <ion-input  id="input-date" type="text" label="Date" placeholder="Date"></ion-input>
                   </ion-item>
@@ -260,7 +260,7 @@ width: 340px;
           </ion-card>
           <ion-button id="savedtbtn" size="small">Add New Data</ion-button>
           <ion-button id="btnlist" size="small">Data List</ion-button>
-            <ion-content>
+            <ion-content >
 
                <ion-card>
                 <ion-card-header>User Old Database</ion-card-header>
@@ -320,11 +320,23 @@ width: 340px;
             <ion-header>
               <ion-toolbar>
                 <ion-title>Bike And Go Weather</ion-title>
+                <ion-card>
+                  <div>
+                <ion-searchbar animated="true" placeholder="Aberdeen" id="city" value="Aberdeen"></ion-searchbar>
+                <ion-button id="srcbtn" expand="block" >Search</ion-button>
+                </div>
+              </ion-card>
               </ion-toolbar>
-            </ion-header>
-
-            <ion-content  class="backgroundimg">
+              
              
+            </ion-header>
+            
+          
+
+
+            <ion-content  class="backgroundimg" >
+            
+
               <div class="pageweather">
                 
                 <div> <img src="" id="weathericon" alt=""> </div>

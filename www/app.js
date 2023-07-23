@@ -188,7 +188,7 @@ function PrintData(weatherdata){
    
 
        
-    var mainWeatherData = document.querySelector ("#weather-results");
+    let mainWeatherData = document.querySelector ("#weather-results");
     
     //icon
     
@@ -250,9 +250,14 @@ function PrintData(weatherdata){
 
    
 
+
+    let searchbtn= document.getElementById("srcbtn");
+    let addCity=document.getElementById("city");
+
     // get data function is fetch JSON, When the fetch is successful, we read data
     function getData(){
 
+        let cityValue = addCity.value;
     //var url="https://api.openweathermap.org/data/2.5/weather?q=London&appid=3aad438e0e6d2414efcb5e578525c3ad&units=metric";
     
     // api key
@@ -261,7 +266,7 @@ function PrintData(weatherdata){
     const apiUrl="https://api.openweathermap.org/data/2.5/weather?q=";
 
     // selected city
-    const apiCity='Aberdeen'
+    const apiCity=cityValue;
     // fetch 
     fetch (apiUrl + apiCity + ',GB' + '&appid=' + apiKey + '&units=metric')
     .then((res) => res.json())
@@ -269,7 +274,9 @@ function PrintData(weatherdata){
     
     }
     
-    getData();
+    searchbtn.addEventListener("click",getData);
+    window.addEventListener("load",getData);
+    //getData();
 
 
     /* Weather Api End */
@@ -484,6 +491,18 @@ function getUserData(){
 
 /* User History Data End */
 
+
+
+/* Date (D/M/Y) */
+
+function getdate(){
+const date = new Date();
+let todayDate = date.toLocaleDateString();
+ document.getElementById("demo").innerHTML = todayDate;
+}
+
+
+/* Date End */
 
 
      
