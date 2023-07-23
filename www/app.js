@@ -190,6 +190,11 @@ function PrintData(weatherdata){
        
     let mainWeatherData = document.querySelector ("#weather-results");
     
+    
+       
+    
+
+
     //icon
     
      document.getElementById('weathericon').src = `http://openweathermap.org/img/w/${weatherdata.weather[0].icon}.png`;
@@ -198,7 +203,7 @@ function PrintData(weatherdata){
     // city 
     let city = document.createElement("h2");
     city.textContent = weatherdata.name;
-    mainWeatherData.append(city);
+    mainWeatherData.innerHTML=weatherdata.name;
     
     
     // Weather Repor
@@ -218,6 +223,7 @@ function PrintData(weatherdata){
     
     let celsius = document.createElement("p");
     celsius.textContent = "Temperature Celsius:  "+ Math.round(weatherdata.main.temp) + " "+"°C";
+    
     mainWeatherData.append(celsius);
     
     // fahrenheit
@@ -244,7 +250,12 @@ function PrintData(weatherdata){
     
      // for testing show all weather data in console
      console.log(weatherdata);
-         
+
+
+
+  
+
+   
     }
 
 
