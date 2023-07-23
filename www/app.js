@@ -196,17 +196,17 @@ function PrintData(weatherdata){
     
     
     // city 
-    var city = document.createElement("h2");
+    let city = document.createElement("h2");
     city.textContent = weatherdata.name;
     mainWeatherData.append(city);
     
     
     // Weather Repor
-    var infoWeather = weatherdata.weather[0]
+    let infoWeather = weatherdata.weather[0]
     if(infoWeather && infoWeather.description)
     {
        
-    var weatherReport = document.createElement("h3");
+    let weatherReport = document.createElement("h3");
     //add description also convert a string to uppercase letters
     weatherReport.textContent = infoWeather.description.toUpperCase();
     mainWeatherData.append(weatherReport);
@@ -216,28 +216,28 @@ function PrintData(weatherdata){
     
     // celsius
     
-    var celsius = document.createElement("p");
+    let celsius = document.createElement("p");
     celsius.textContent = "Temperature Celsius:  "+ Math.round(weatherdata.main.temp) + " "+"°C";
     mainWeatherData.append(celsius);
     
     // fahrenheit
-    var fahrenheit = document.createElement("p");
+    let fahrenheit = document.createElement("p");
     fahrenheit.textContent = "Temperature Fahrenheit:  "+ Math.round((weatherdata['main']['temp']* 9/5 + 32)) + " "+"F";
     mainWeatherData.append(fahrenheit);
     
     // humidity
-    var humidity = document.createElement("p");
+    let humidity = document.createElement("p");
     humidity.textContent = "Humidity:  "+ weatherdata.main.humidity + "%";
     mainWeatherData.append(humidity);
     
     
     // shows wind speed km/h and mph also wind speed degrees
-    var windSpeed = document.createElement("p");
+    let windSpeed = document.createElement("p");
     windSpeed.textContent = "Wind Speed:  "+ Math.round((weatherdata.wind.speed * 3.6)) + " km/h" + " / "+ Math.round((weatherdata.wind.speed / 0.44704 ))+ " mph";
     mainWeatherData.append(windSpeed);
 
     // shows wind speed degrees
-    var windSpeedDeg = document.createElement("p");
+    let windSpeedDeg = document.createElement("p");
     windSpeedDeg.textContent = "Wind Speed Degrees: "+ weatherdata.wind.deg + "°";
     mainWeatherData.append(windSpeedDeg);
     
