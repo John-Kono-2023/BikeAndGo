@@ -123,7 +123,7 @@ map.on('click', onMapClick);
 function myLocation(e){
     
             // radius provide an accurate device location
-            var radius = e.accuracy / 6;
+            var radius = e.accuracy / 4;
             // marker Location
             var marker = L.marker([e.latitude, e.longitude], radius).bindPopup('There You Are :)');
             // circle Location
@@ -164,8 +164,9 @@ function myLocation(e){
 // find user location 
    function findMyLocation()
     {
-    // alert method displays an alert box with a message and an OK button
-      alert("Requesting Authorization to use Location Services");
+    
+        // alert box Displays a popup with the message "Requesting Authorization to use Location Services"
+    alert("Requesting Authorization to use Location Services");
       // locate user
       map.locate({setView: true, maxZoom: 16});
     }
@@ -245,12 +246,10 @@ function PrintData(weatherdata){
     mainWeatherData.append(windSpeedDeg);
     
     
-     // for testing show all weather data in console
+     // Output testing print all weather data in console
      console.log(weatherdata);
 
 
-
-  
 
    
     }
@@ -266,6 +265,7 @@ function PrintData(weatherdata){
     function getData(){
 
         let cityName = addCity.value;
+
     //var url="https://api.openweathermap.org/data/2.5/weather?q=London&appid=3aad438e0e6d2414efcb5e578525c3ad&units=metric";
     
     // api key
@@ -273,9 +273,12 @@ function PrintData(weatherdata){
     // api url
     const apiUrl="https://api.openweathermap.org/data/2.5/weather?q=";
 
+     // if user not enter city name
     if (cityName.length == 0)
     {
+        // Display default city
         cityName ="Aberdeen";
+        // Displays a popup with the message "Please Enter City Name ..."
         alert("Please Enter City Name ...")
     }
 
@@ -327,25 +330,6 @@ function PrintRandomUserData(randomUserdata){
      mainUserData.append(userFullName);
      
      
-     
-     /*
-     // Title + User first Name + User Last Name 
-     var userTitle = document.createElement("p");
-     userTitle.textContent = randomUserdata.results[0].name.title ;
-     mainUserData.append(userTitle);
- 
-    
-     // User first Name 
-    var userFirstName = document.createElement("p");
-    userFirstName.textContent = randomUserdata.results[0].name.first;
-    mainUserData.append(userFirstName);
-
-    // User Last Name 
-    var userLastName = document.createElement("p");
-    userLastName.textContent = randomUserdata.results[0].name.last;
-    mainUserData.append(userLastName);
-*/
-
      // User Email
      var userMail = document.createElement("p");
      userMail.textContent = randomUserdata.results[0].email;
@@ -379,17 +363,11 @@ function PrintRandomUserData(randomUserdata){
        var userCountry = document.createElement("h3");
        userCountry.textContent = randomUserdata.results[0].location.country;
        mainUserData.append(userCountry);
-
       
-
-        
-
-
-        
 
 
      
-   // print old data in console
+   // Output for testing print random user data in console
    console.log(randomUserdata);
  
  }
