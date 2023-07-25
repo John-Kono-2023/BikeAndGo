@@ -28,5 +28,8 @@ var rentPointData = [
     L.marker([57.13143, -2.117009]).bindPopup('Aberdeen City Council Bike Hire Point'),
 
     /* Aberdeen University bike hire point position */
-    L.marker([57.1648, -2.1015]).bindPopup('Aberdeen University Bike Hire Point')
+    L.marker([57.1648, -2.1015]).bindPopup('Aberdeen University Bike Hire Point'),
+
+    /* Aberdeen University bike hire point position */
+    L.marker([57.1434, -2.0961]).bindPopup('Union Square Aberdeen Bike Hire Point')
 ];
