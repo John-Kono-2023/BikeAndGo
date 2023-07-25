@@ -58,7 +58,7 @@ const map = L.map('map');
 map.setView([57.149651,  -2.09907], 12);
 
 
-// open street map
+    // open street map
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     // open street map copyright
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -94,10 +94,10 @@ mapPoints();
 // click on map and find position find as a Lat,lng
 var popup = L.popup();
 
-function onMapClick(e) {
+function onMapClick(position) {
     popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
+        .setLatLng(position.latlng)
+        .setContent("You clicked the map at " + position.latlng.toString())
         .openOn(map);
 }
 
@@ -121,7 +121,7 @@ function myLocation(e){
                 color: 'red',
                 // circle Opacity
                 fillOpacity: 0.2,
-
+                // circle radius   
                 radius: 400
                 
             });
