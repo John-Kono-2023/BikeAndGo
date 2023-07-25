@@ -73,20 +73,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       resize.observe(myMap);
 
   
-// shows on map city center and bike hire points
+// shows bike hire points
  function mapPoints(){
-
-/* Aberdeen City Center */
-// var aberdeen = L.marker([57.149651, -2.09907]).bindPopup('Aberdeen City Center').addTo(map);
-
-/* Robert Gordon University Bike Hire Point */
-// var rgu = L.marker([57.1189, -2.1379]).bindPopup('Robert Gordon University Bike Hire Point').addTo(map);
-
-/* Aberdeen city council bike hire point position */
-// var council_1 = L.marker([57.13143, -2.117009]).bindPopup('Aberdeen City Council Bike Hire Point').addTo(map);
-
-/* Aberdeen University bike hire point position */
-// var council_1 = L.marker([57.1648, -2.1015]).bindPopup('Aberdeen University Bike Hire Point').addTo(map);
 
 
 // for loop for call all data from data.js and print on map
@@ -103,7 +91,7 @@ mapPoints();
 
 
 
-// click on map and find position and find Lat,lng
+// click on map and find position find as a Lat,lng
 var popup = L.popup();
 
 function onMapClick(e) {
@@ -123,7 +111,7 @@ map.on('click', onMapClick);
 function myLocation(e){
     
             // radius provide an accurate device location
-            var radius = e.accuracy / 4;
+            var radius = e.accuracy / 2*4;
             // marker Location
             var marker = L.marker([e.latitude, e.longitude], radius).bindPopup('There You Are :)');
             // circle Location
@@ -132,7 +120,9 @@ function myLocation(e){
                 // circle color
                 color: 'red',
                 // circle Opacity
-                fillOpacity: 0.2
+                fillOpacity: 0.2,
+
+                radius: 400
                 
             });
             
@@ -151,11 +141,11 @@ function myLocation(e){
      alert("Not authorized to use location services");
     }
 
-    
+    // user location not find error
     map.on('locationerror', myLocationerror);
         
         
-    
+    // user location found
     map.on('locationfound', myLocation);
 
         
