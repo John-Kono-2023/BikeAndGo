@@ -495,7 +495,7 @@ let todayDate = date.toLocaleDateString();
 
 /* Chart 1 */
 function firstChart(){
-let week=['calorie burned', 'need to burn' ];
+let text1=['calorie burned', 'need to burn' ];
 let calorie =['450','1200'];
 let chartColor=['#3399ff','#b3d9ff'];
 
@@ -505,7 +505,7 @@ let homeChart= document.getElementById("homePageChart").getContext('2d');
 type:'doughnut',
 data:{
 
-    labels: week,
+    labels: text1,
     datasets:[
         {
             data: calorie,
@@ -531,9 +531,9 @@ firstChart();
 
 
 
-/* Chart 2 */
+/*  Chart 2 */
 function secondChart(){
-let plan=['Used Minutes', 'Planed Minutes' ];
+let text2=['Used Minutes', 'Planed Minutes' ];
 let min =['790','2900'];
 let chartColor2=['#3399ff','#b3d9ff'];
 
@@ -543,7 +543,7 @@ new Chart(homeChart2,{
 type:'doughnut',
 data:{
 
-    labels: plan,
+    labels: text2,
     datasets:[
         {
             data: min,
