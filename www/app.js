@@ -9,6 +9,10 @@
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 
+
+
+
+
 /* ionic pages */
 
 
@@ -487,4 +491,81 @@ let todayDate = date.toLocaleDateString();
 /* Date End */
 
 
-     
+
+
+/* Chart 1 */
+function firstChart(){
+let week=['calorie burned', 'need to burn' ];
+let calorie =['450','1200'];
+let chartColor=['#3399ff','#b3d9ff'];
+
+let homeChart= document.getElementById("homePageChart").getContext('2d');
+
+ new Chart(homeChart,{
+type:'doughnut',
+data:{
+
+    labels: week,
+    datasets:[
+        {
+            data: calorie,
+            hoverBackgroundColor: chartColor
+        }
+    ]
+},
+
+options:{
+    borderWidth:2,
+    plugins:{
+        legend:{
+             display : false,},
+    },
+},
+
+});
+
+}
+
+firstChart();
+/* Chart1 End*/
+
+
+
+/* Chart 2 */
+function secondChart(){
+let plan=['Used Minutes', 'Planed Minutes' ];
+let min =['790','2900'];
+let chartColor2=['#3399ff','#b3d9ff'];
+
+let homeChart2= document.getElementById("homePageChart2").getContext('2d');
+
+new Chart(homeChart2,{
+type:'doughnut',
+data:{
+
+    labels: plan,
+    datasets:[
+        {
+            data: min,
+            hoverBackgroundColor: chartColor2
+        }
+    ]
+},
+
+options:{
+    borderWidth:2,
+    plugins:{
+        
+        legend:{
+             display : false,},
+    },
+},
+
+});
+}
+
+secondChart();
+
+/* Chart 2 End*/
+
+

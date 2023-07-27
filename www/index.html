@@ -28,7 +28,7 @@
 
 
  <!-- load Chart.js -->
- <script src="../node_modules/chart.js/dist/chart.js"></script>
+ <script src="../node_modules/chart.js/dist/chart.umd.js"></script> 
      
 
 
@@ -67,8 +67,8 @@
   margin-left: auto;
   margin-right: auto;
   border: 5px solid #0aa4d3;
-  height:250px;
-  width:250px;
+  height:150px;
+  width:150px;
  
 }
 
@@ -133,7 +133,7 @@ height: 100%;
 
 h2{
 
-font-size:40px;
+font-size:28px;
 font-weight:450;
 
 }
@@ -141,7 +141,7 @@ font-weight:450;
 
 h3{
 
-font-size:28px;
+font-size:14px;
 font-weight:450;
 
 }
@@ -149,7 +149,7 @@ font-weight:450;
 
 p{
 
-font-size:18px;
+font-size:8px;
 font-weight:450;
 
 }
@@ -163,7 +163,19 @@ width: 340px;
 
 }
 
-#chart
+
+
+.chart-size{
+  width: 122px;
+ 
+  display: flex;
+  margin-top:0;
+  margin-bottom:0;
+  margin-left: 70;
+  margin-right: 70;
+
+}
+
 
 
 
@@ -204,12 +216,22 @@ width: 340px;
               <div class="pagehome">
                 <!--App Logo-->
               <div> <img   class="logo" src="../www/images/logo.png"  alt="Bike And Go Logo"> </div> 
-
-            <ion-card>
+             
+              <ion-card>
+                <div><h2> User Status <h2></div>
+              <div class="chart-size">
+             
+                <canvas id="homePageChart"></canvas>
+                <canvas id="homePageChart2"></canvas>
+              
+              </div>
+          </ion-card>
+           
+          <ion-card>
               <!--Random User Image-->
             <div> <img class="picture" src="" id="user-picture" alt=""> </div> 
            <!--Random User Data Result-->
-            <div id="user-result"> </div>
+            <div id="user-result" display="flex"> </div>
             </ion-card>
 
             </div>
